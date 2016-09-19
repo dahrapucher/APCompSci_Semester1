@@ -10,7 +10,7 @@ public class Lesson_03
 		//prompt for user input
 		System.out.println("Who is your favorite teacher? ");
 		
-		String teacher = keyboard.next();
+		Double teacher = keyboard.nextDouble();
 		
 		System.out.println("Okay! " + teacher + " is very good!");
 	}
