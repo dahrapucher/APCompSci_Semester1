@@ -9,6 +9,7 @@ public class Receipt
 		
 		//instantiate the new Scanner object "kb"
 		Scanner kb = new Scanner(System.in);
+		
 		//inputs for item1
 		System.out.println("Please enter item 1");
 		String item1 = kb.nextLine();
@@ -27,19 +28,25 @@ public class Receipt
 		System.out.println("Please enter the price");
 		double price3 = kb.nextDouble();
 		
+		//calculations for reciept
 		double subamount = price1 + price2 + price3;
 		
 		double tax = 0.08 * subamount;
 		
 		double total = tax + subamount;
 		
+		//final reciept
 		System.out.println("<<<<<<<<<<_Receipt_>>>>>>>>>>");
 		form.format(item1, price1);
 		form.format(item2, price2);
 		form.format(item3, price3);
+		System.out.println("\n");
 		form.format("Subtotal:", subamount);
 		form.format("Tax:", tax);
 		form.format("Total:", total);
+		System.out.println("\n");
+		System.out.println("-----------------------------------------------------");
+		System.out.println("\t*  Thank you for your support  *");
 	}
 	
 	public void format(String item, double price)
