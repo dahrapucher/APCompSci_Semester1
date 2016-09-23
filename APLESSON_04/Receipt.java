@@ -45,7 +45,7 @@ public class Receipt
 		form.format("Tax:", tax);
 		form.format("Total:", total);
 		System.out.println("\n");
-		System.out.println("-----------------------------------------------------");
+		System.out.println("-----------------------------------");
 		System.out.println("\t*  Thank you for your support  *");
 	}
 	

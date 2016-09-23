@@ -22,7 +22,7 @@ public class IDCard
 		System.out.println("Enter the school year");
 		String year = kb.nextLine();
 		System.out.println("What is your subject?");
-		String subject = kb.nextLine();
+		String subject = kb.nextLine(); 
 		
 		//formating ID Card
 		System.out.println("***************************************");
