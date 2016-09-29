@@ -6,27 +6,25 @@ public class Rectangle
 	static double w;
 	static double perimeter;
 	
-	public static void main(String[]args);
+	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
+		//user inputs
 		System.out.println("Enter length: ");
 		l = kb.nextDouble();
 		System.out.println("Enter width: ");
 		w = kb.nextDouble();
 		
-		calcPerim(double l, double w);
+		calcPerim();
 		print();
-		
-		
 	}
-	public static void calcPerim(double l, double w)
+	public static void calcPerim()
 	{
-		return 2*w+2*l
-		perimeter = return
+		perimeter = 2*l+2*w;
 	}
 	
-	public static void print
+	public static void print()
 	{
-		System.out.println
+		System.out.println("Your rectangle is " + perimeter + " feet around.");
 	}
 }
