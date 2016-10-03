@@ -11,7 +11,7 @@ public class circle
 		Scanner kb = new Scanner(System.in);
 		
 		//user input
-		System.out.println("Enter the radius of your sphere: ");
+		System.out.println("Enter the radius of your circle: ");
 		r = kb.nextDouble();
 		
 		//method call
