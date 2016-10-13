@@ -21,12 +21,11 @@ public class GPA
 		System.out.println("Enter your letter grade for history:");
 		String history = kb.next();
 		
-		double gPoints = calcPoints(math) + calcPoints(science) + calcPoints(pe) + caclPoints(english) + calcPoints(art) + calcPoints(spanish) + calcPoints(history);
-		double gpa = gPoints/7;
-		System.out.println("Your GPA is " + gpa);
+		double gPoints = calcPoints(math) + calcPoints(science) + calcPoints(pe) + calcPoints(english) + calcPoints(art) + calcPoints(spanish) + calcPoints(history);
+		System.out.println("Your GPA is " + gPoints/7);
 		
 	}
-	public static void calcPoints(String grade)
+	public static double calcPoints(String grade)
 	{
 		if(grade.equals("A"))
 			return 4.0;
@@ -36,7 +35,6 @@ public class GPA
 			return 2.0;
 		if(grade.equals("D"))
 			return 1.0;
-		return 0.0
-		
+		return 0.0;
 	}
 }

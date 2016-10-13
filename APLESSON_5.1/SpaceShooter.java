@@ -11,7 +11,7 @@ public class SpaceShooter
 		
 		if(target == enemyLoc)
 			System.out.println("It's a hit!");
-		if(target != enemyLoc)
+		else //in all other conditions but the if above
 			System.out.println("Keep trying!");
 	}
 }
