@@ -3,17 +3,19 @@ import java.util.Scanner;
 public class password
 {
 	static Scanner kb;
+	static String rightName;
+	static String rightPW;
 	
 	public static void main(String[]args)
 	{
 		kb = new Scanner(System.in);
 		
-		String rightName = "username";
-		String rightPW = "Password";
+		rightName = "username";
+		rightPW = "Password";
 		
-		passCheck(rightName, rightPW);
+		passCheck();
 	}
-	public static String passCheck(String rightName, String rightPW)
+	public static void passCheck()
 	{
 		System.out.println("Please enter your username:");
 		String username = kb.next();
@@ -22,7 +24,26 @@ public class password
 		
 		if(rightName.equals(username) && rightPW.equals(password))
 		{
-			return "You are granted access!";
+			System.out.println("You are granted access!");
+		}
+		
+		else
+		{
+			if(rightName.equals(username))
+			{
+				System.out.println("Your password is incorrect!");
+				passCheck();
+			}
+			else if(rightPW.equals(password))
+			{
+				System.out.println("Your username is incorrect!");
+				passCheck();
+			}
+			else
+			{
+				System.out.println("Your username and password are incorrect!");
+				passCheck();
+			}
 		}
 	}
 }
