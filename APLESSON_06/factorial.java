@@ -7,11 +7,12 @@ public class factorial
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Please enter an integer:");
 		int num = kb.nextInt();
+		int fact = 1;
 	
-		for(int fact = 1; fact <= num; num*=fact)
+		for(int i = 1; i <= num; i++)
 		{
-			System.out.println(fact);
-			fact++;
+			fact*=i;
 		}
+		System.out.println(fact);
 	}
 }
