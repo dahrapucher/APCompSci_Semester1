@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class DigitAdder
+public class reverseNumber
 {
 	static int number;
-	static int sum = 0;
+	static int rev = 0;
 	
 	public static void main(String[]args)
 	{
@@ -11,16 +11,17 @@ public class DigitAdder
 		System.out.println("Please enter a number:");
 		number = kb.nextInt();
 		
-		sumDigits();
-		System.out.println("The sum of the digits in " + number + " is " + sum);
+		getReverse();
+		System.out.println(number + " reversed is " + rev);
 	}
-	public static void sumDigits()
+	public static void getReverse()
 	{
 		int num = number;
 		
 		while(num > 0)
 		{
-			sum = num % 10 + sum;
+			rev *= 10;
+			rev += num % 10;
 			num /= 10;
 		}
 	}
