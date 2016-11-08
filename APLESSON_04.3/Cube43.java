@@ -11,7 +11,7 @@ public class Cube43
 		System.out.println("Enter the lenth of a side of your cube: ");
 		double side = kb.nextDouble();
 		
-		print(calcSurf(side));
+		print(side, calcSurf(side));
 	}
 	public static double calcSurf(double side)
 	{
