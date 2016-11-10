@@ -9,17 +9,17 @@ public class treeDeg60
 		String word = kb.next();
 		int stop = word.length();
 		
-		System.out.printf(tree(word, 0, stop));
+		tree(word, 0, stop);
 		
 	}
 	public static String tree(String word, int start, int stop)
 	{
-		if(start <= stop)
+		while(start <= stop)
 		{
-			return word.substring(0, start);
+			System.out.printf("%20s\n", word.substring(0, start)); 
 			start += 1;
-			tree(word, start, stop);
+			return tree(word, start, stop);			
 		}
-		return word;
+		return "";
 	}
 }
