@@ -11,10 +11,10 @@ public class averageNum
 		for(int num : numbers)
 			System.out.print(num + " ");
 		System.out.println();
-		System.out.println("The average of the above numbers is... " + average(numbers));
+		System.out.println("The average of the above numbers is about... " + average(numbers));
 	}
 	
-	public static int average(int[] x)
+	public static int9 average(int[] x)
 	{
 		int average = 0;
 		int sum = 0;
