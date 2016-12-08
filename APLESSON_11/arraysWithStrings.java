@@ -2,7 +2,7 @@ public class arraysWithStrings
 {
 	public static void main(String[]args)
 	{
-		String letters = "qwertyuiopasdfghjklzxcvbnm";
+		String letters = "abcdefghijklmnopqrstuvwxyz";
 		String[][]randLetters = new String[4][4];
 		
 //		randLetters[0][0] = "a";

@@ -9,7 +9,7 @@ public class Strings
 		
 		for(int i = 0; i < words.length; i++)
 		{
-			for(int j = 0; j < words[i].length; j ++)
+			for(int j = 0; j < words[i].length; j++)
 			{
 				System.out.println("Please enter a word:");
 				String answer = kb.next();
