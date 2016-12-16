@@ -24,8 +24,10 @@ public class gameGun
 				reload();
 			if(action.equals("S"))
 				System.out.println(shoot());
+			printClip();
 		}
-		printClip();
+		System.out.println("You are out of bullets.");
+
 	}
 	
 	public static void resetClip()

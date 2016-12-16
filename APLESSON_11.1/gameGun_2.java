@@ -18,12 +18,12 @@ public class gameGun_2
 		while(turn != "Q" && healthCount > 0)
 		{
 			System.out.println("Your turn! Hit Enter when ready:");
-			turn = kb.next();
+			turn = kb.nextLine();
 			damage = (int)(Math.random()*2) + 1;
 			amount = (int)(Math.random()*6) + 1;
+			System.out.println(takeDamage(damage, amount));
+			printClip();
 		}
-		
-		printClip();
 		System.out.println("You died!!");
 	}
 	
@@ -50,7 +50,7 @@ public class gameGun_2
 	
 	public static void printClip()
 	{
-		String output = "Health\t";
+		String output = "Health:\t";
 		for(int i = 0; i < healthLoad; i++)
 		{
 			if(i < healthCount)
