@@ -6,13 +6,13 @@ public class MPHRunner
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Please enter distance: ");
-		int distance = kb.nextInt();
+		int dist = kb.nextInt();
 		System.out.println("Please enter number of hours: ");
-		int hour = kb.nextInt();
+		int hr = kb.nextInt();
 		System.out.println("Please enter number of minutes: ");
-		int minutes = kb.nextInt();
+		int min = kb.nextInt();
 		
-		milesPerHour object = new milesPerHour();
+		milesPerHour object = new milesPerHour(dist, hr, min);
 		
 		System.out.println(object.getDist() + " miles in " + object.getHours() + " hours and " + object.getMin() + " minutes is " + object.getMPH() + " mph.");
 		
