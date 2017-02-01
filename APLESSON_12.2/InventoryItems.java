@@ -18,7 +18,7 @@ public class InventoryItems
 		price = p;
 		UPC = (int)(Math.random()*1000000000)+100000000;
 	}
-		public String toString()
+	public String toString()
 	{
 		return "Item Info...\nItem Manufacturer: " + manufacturer +
 							"\nItem Name: " + name +
