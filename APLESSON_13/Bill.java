@@ -1,6 +1,8 @@
 public class Bill extends money
 {
 	private String face;
+	private String name;
+	private double value;
 	
 	public Bill()
 	{
@@ -10,8 +12,13 @@ public class Bill extends money
 	
 	public Bill(String n, String f, double v)
 	{
-		super(n,v);
+		super(n, v);
 		this.face = f;
+	}
+	
+	public String scan()
+	{
+		return face;
 	}
 	
 	public String toString()
