@@ -1,4 +1,4 @@
-public class GMC implements location
+public class GMC implements Location
 {
 	private double x, y;
 	

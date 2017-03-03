@@ -1,14 +1,17 @@
-public class toyota implements location
+public class Toyota implements Location
 {
-	private double[] coordinates;
+	private double[] location;
 	
-	public toyota()
+	public Toyota()
 	{
-		coordinates = null;
+		location = new double[2];
 	}
-	public toyota()
+	public Toyota(String s)
 	{
-		
+		location = new double[2];
+		String[] locs = s.split(", ");
+		location[0] = Double.parseDouble(locs[0]);
+		location[1] = Double.parseDouble(locs[1]);
 	}
 	
 	public int getID()
@@ -18,6 +21,12 @@ public class toyota implements location
 	
 	public void move(double x, double y)
 	{
-		
+		location[0]+=x;
+		location[1]+=y;
+	}
+	
+	public double[] getLoc()
+	{
+		return location;
 	}
 }
