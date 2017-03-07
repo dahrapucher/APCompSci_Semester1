@@ -1,6 +1,7 @@
-public class Honda implements Location
+public class Honda extends Car
 {
 	private double[] location;
+	private int ID;
 	
 	public Honda()
 	{

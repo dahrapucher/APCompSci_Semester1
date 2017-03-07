@@ -1,6 +1,7 @@
-public class GMC implements Location
+public class GMC extends Car
 {
 	private double x, y;
+	private int ID;
 	
 	public GMC()
 	{
@@ -17,7 +18,7 @@ public class GMC implements Location
 		return (int)(Math.random()*1000000)+1;
 	}
 	
-	public void move(int one, int two)
+	public void move(double one, double two)
 	{
 		x += one;
 		y += two;

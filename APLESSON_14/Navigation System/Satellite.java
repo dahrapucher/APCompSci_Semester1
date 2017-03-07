@@ -15,11 +15,16 @@ public class Satellite
 
        String printout = "\n\n" +
                "==========================" + "\nStarting locations...";
+			   
 
-
-       for (Location l : locate)
+		 for (Location l : locate)
        {
            printout += "\nLocation for " + l.getID() + ": (" + getLocation(l.getLoc()) + ")";
+		    double one = (int)(Math.random()*100)+1;
+		   double two = (int)(Math.random()*100)+1;
+		   //
+		   printout += "\nAfter " + l.getID() + " Moved " + "(" + one + ", " + two + ")" +
+						"\nNew Location: " + "(" + getLocation(l.getLoc()) + ")" + "\n";
        }
 
 
