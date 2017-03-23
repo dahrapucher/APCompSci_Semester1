@@ -34,10 +34,10 @@ public class Magpie2
 			response = "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement, "mother") != -1
+				||findKeyword(statement, "father") != -1
+				|| findKeyword(statement, "sister") != -1
+				|| findKeyword(statement, "brother") != -1)
 		{
 			response = "Tell me more about your family.";
 		}
@@ -52,7 +52,19 @@ public class Magpie2
 		 * Create addtional code (another else if) that
 		 * responds "He sounds like a pretty dank teacher"
 		 * if you mention "Robinette" in your statement */
-
+		else if(statement.indexOf("cat") >= 0
+				|| statement.indexOf("dog") >= 0
+				|| statement.indexOf("fish") >= 0
+				|| statement.indexOf("turtle") >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+		
+		else if(statement.indexOf("Robinette") >= 0)
+		{
+			response = "He sounds like a pretty dank teacher.";
+		}
+		
 		else
 		{
 			response = getRandomResponse();
@@ -92,24 +104,37 @@ public class Magpie2
 						--return psn
 
 				Otherwise, search for goal in phrase from psn + 1 forward */
-		String phrase = statement.trim();
-		phrase.toLowerCase();
-		
+		String phrase = statement.trim().toLowerCase();
+	
 		if(phrase.indexOf(goal) >= 0)
 		{
 			int psn = phrase.indexOf(goal, startPos);
+			
 			if(psn>=0)
 			{
-				int before = phrase.charAt(psn)-1;
-				String b = phrase.charAt(before) + "";
-				int after = phrase.charAt(psn + goal.length());
-				String a = phrase.charAt(after) + "";
-				
-				if(b.compareTo("a") < 0 && a.compareTo("z") > 0)
+				if(psn>0)
+				{
+					String before = phrase.charAt(psn-1) + "";
+					
+					if(phrase.charAt(phrase.length()+1).equals(goal.chartAt(phrase.length()+goal.length()+1)))
+					{
+						return psn;
+					}
+					else
+					{
+						String after = phrase.charAt(psn + goal.length()) + "";
+						if(before.compareTo("a") < 0 && after.compareTo("z") > 0)
+						{		
+							return psn;
+						}
+					}
+				}
+				else
 				{
 					return psn;
 				}
 			}
+			
 			else
 			{
 				return phrase.indexOf(goal, psn+1);
