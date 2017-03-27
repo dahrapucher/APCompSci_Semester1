@@ -21,7 +21,7 @@ public class Magpie2
 		 * 	if you enter nothing, or if you accidentally hit
 		 * 	enter. Think to yourself: "What is the length of
 		 * 	an empty String?" */
-		if(statement.length()==0)
+		if(statement.length() == 0)
 		{
 			response = "Say something, please.";
 		}
@@ -29,7 +29,7 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (findKeyword(statement, "no") != -1)
+		else if (findKeyword(statement, "no") != -1)
 		{
 			response = "Why so negative?";
 		}
@@ -52,15 +52,15 @@ public class Magpie2
 		 * Create addtional code (another else if) that
 		 * responds "He sounds like a pretty dank teacher"
 		 * if you mention "Robinette" in your statement */
-		else if(statement.indexOf("cat") >= 0
-				|| statement.indexOf("dog") >= 0
-				|| statement.indexOf("fish") >= 0
-				|| statement.indexOf("turtle") >= 0)
+		else if(findKeyword(statement, "cat") != -1
+				||findKeyword(statement, "dog") != -1
+				|| findKeyword(statement, "fish") != -1
+				|| findKeyword(statement, "turtle") != -1)
 		{
 			response = "Tell me more about your pet.";
 		}
 		
-		else if(statement.indexOf("Robinette") >= 0)
+		else if(findKeyword(statement, "Robinette") != -1)
 		{
 			response = "He sounds like a pretty dank teacher.";
 		}
@@ -105,40 +105,31 @@ public class Magpie2
 
 				Otherwise, search for goal in phrase from psn + 1 forward */
 		String phrase = statement.trim().toLowerCase();
-	
+		int psn = phrase.indexOf(goal, startPos);
+		
+		String after = "";
+		String before = "";
 		if(phrase.indexOf(goal) >= 0)
-		{
-			int psn = phrase.indexOf(goal, startPos);
-			
+		{	
 			if(psn>=0)
 			{
 				if(psn>0)
 				{
-					String before = phrase.charAt(psn-1) + "";
-					
-					if(phrase.charAt(phrase.length()+1).equals(goal.chartAt(phrase.length()+goal.length()+1)))
-					{
-						return psn;
-					}
-					else
-					{
-						String after = phrase.charAt(psn + goal.length()) + "";
-						if(before.compareTo("a") < 0 && after.compareTo("z") > 0)
-						{		
-							return psn;
-						}
-					}
+					before = phrase.substring(psn-1, psn);
 				}
-				else
+				if(psn + goal.length() < phrase.length())
 				{
+					after = phrase.substring(psn + goal.length(), psn + goal.length()+1);
+				}
+				
+				if(((before.compareTo("a") < 0) || (before.compareTo("z") > 0)) && ((after.compareTo("a") < 0) || (after.compareTo("z") > 0)))
+				{		
 					return psn;
 				}
 			}
-			
 			else
-			{
-				return phrase.indexOf(goal, psn+1);
-			}
+				return psn = phrase.indexOf(goal, psn+1);
+			
 		}
 
 		return -1;
