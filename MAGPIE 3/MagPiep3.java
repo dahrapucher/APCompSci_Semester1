@@ -1,4 +1,4 @@
-public class MagPiep2
+public class MagPiep3
 {
 	/** Get a default greeting @return a greeting*/
 	public String getGreeting()
@@ -70,7 +70,11 @@ public class MagPiep2
 		{
 			response = transformIWantToStatement(statement);
 		}
-
+		
+		else if(findKeyword(statement, "i") >= 0 && findKeyword(statement, "you", findKeyword(statement, "i")) >= 0)
+		{
+			response = tranformIYouStatement(statement);
+		}
 		// Look for a two word (you <something> me)
 		// pattern
 		else
@@ -122,6 +126,24 @@ public class MagPiep2
 		
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe); 
 		return "What makes you think that I" + restOfStatement + "you?";
+	}
+	
+	private String tranformIYouStatement(String statement)
+	{
+		statement.trim().toLowerCase();
+		
+		String lastChar = statement.substring(statement.length()-1);
+		
+		if(lastChar.equals("."))
+		{
+			statement = statement.substring(0, statement.length()-1);
+		}
+		
+		int psnOfI = findKeyword(statement, "i");
+		int psnOfYou = findKeyword(statement, "you", psnOfI + 1);
+		
+		String restOfStatement = (statement.substring(psnOfI + 1, psnOfYou)).trim();
+		return "Why do you " + restOfStatement +  " me?";
 	}
 	
 	/** Ex_02: The findKeyword() Method...
