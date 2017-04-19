@@ -17,6 +17,40 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testKeepOnlyBlue()
+  {
+	Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyBlue();
+    beach.explore();
+  }
+  
+  public static void testNegate()
+  {
+	Picture cat = new Picture("kitten2.jpg");
+    cat.explore();
+    cat.negate();
+    cat.explore();
+  }
+  
+  public static void testGrayscale()
+  {
+	Picture bird = new Picture("swan.jpg");
+	bird.explore();
+	bird.grayscale();
+	bird.explore();
+  }
+  
+  public static void testMirrorVerticalRightToLeft()
+  {
+	Picture bike = new Picture("blueMotorcycle.jpg");
+	bike.explore();
+	bike.mirrorVerticalRightToLeft();
+	bike.explore();  
+  }
+  
+
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -58,7 +92,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -80,5 +114,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	testMirrorVerticalRightToLeft();
   }
 }

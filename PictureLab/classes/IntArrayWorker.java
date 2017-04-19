@@ -124,7 +124,7 @@ public class IntArrayWorker
 		{
 			if(matrix[row][col] > max)
 			{
-				matrix[row][col] = max;
+				max = matrix[row][col];
 			}
 		}
 	}
