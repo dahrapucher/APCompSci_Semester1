@@ -49,7 +49,21 @@ public class PictureTester
 	bike.explore();  
   }
   
-
+  public static void testMirrorHorizontal()
+  {
+	Picture bike = new Picture("blueMotorcycle.jpg");
+	bike.explore();
+	bike.mirrorHorizontal();
+	bike.explore();   
+  }
+  
+ public static void testMirrorHorizontalBotToTop()
+ {
+	 Picture bike = new Picture("blueMotorcycle.jpg");
+	 bike.explore();
+	 bike.mirrorHorizontalBotToTop();
+	 bike.explore();
+ }
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
@@ -69,6 +83,22 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorArms()
+  {
+	Picture snowman = new Picture("snowman.jpg");
+	snowman.explore();
+	snowman.mirrorArms();
+	snowman.explore();
+  }
+  
+  public static void testMirrorGull()
+  {
+	Picture gull = new Picture("seagull.jpg");
+	gull.explore();
+	gull.mirrorGull();
+	gull.explore();
+  }
+  
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -83,6 +113,14 @@ public class PictureTester
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
+  }
+  
+  public static void testCopy()
+  {
+	Picture flower = new Picture("flower1.jpg");
+	flower.explore();
+	flower.copy(flower, 64, 23, 55, 89);
+	flower.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -101,11 +139,11 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    //testMirrorArms();
+   //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+    testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
@@ -114,6 +152,8 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	testMirrorVerticalRightToLeft();
+	//testMirrorVerticalRightToLeft();
+	//testMirrorHorizontal();
+	//testMirrorHorizontalBotToTop();
   }
 }
