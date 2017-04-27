@@ -30,7 +30,15 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		cards = new ArrayList<Card>;
+		cards = new ArrayList<>();
+		
+		for(int i = 0; i < ranks.length; i++)
+		{
+			Card c = new Card(ranks[i], suits[i], values[i]);
+			cards.add(c);
+		}
+		
+		size = cards.size();
 		
 		shuffle();
 	}
@@ -44,7 +52,7 @@ public class Deck {
 		if(size > 0)
 			return true;
 		else
-			return false
+			return false;
 	}
 
 	/**
@@ -69,7 +77,12 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		for(int i = size-1; i > 0; i--)
+		{
+			return cards.get(i);
+		}
+		
+		return null;
 	}
 
 	/**
