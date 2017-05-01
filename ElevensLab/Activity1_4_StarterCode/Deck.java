@@ -68,7 +68,13 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		for(int k = size - 1; k > 0; k--)
+		{
+			int r = (int)(Math.random() * k);
+			Card tmp = cards.get(r);
+			cards.set(r, cards.get(k));
+			cards.set(k, tmp);
+		}
 	}
 
 	/**
@@ -76,7 +82,7 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() {
+	public Card deal(){
 		for(int i = size-1; i > 0; i--)
 		{
 			return cards.get(i);
