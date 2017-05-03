@@ -30,5 +30,11 @@ public class DeckTester {
 		int [] values3 = {2,6,4,10};
 		Deck three = new Deck(ranks3, suits3, values3);
 		System.out.println("The dealt card is " + three.deal());
+		three.shuffle();
+		System.out.println(three);
+		three.shuffle();
+		three.deal();
+		System.out.println(three);
+		
 	}
 }
